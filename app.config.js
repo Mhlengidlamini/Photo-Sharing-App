@@ -1,0 +1,44 @@
+module.exports = {
+  name: 'photosharing',
+  slug: 'photosharing',
+  version: '1.0.0',
+  orientation: 'portrait',
+  icon: './assets/icon.png',
+  userInterfaceStyle: 'dark',
+  scheme: 'photosharing',
+  splash: {
+    image: './assets/splash-icon.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff'
+  },
+  ios: {
+    supportsTablet: true,
+    bundleIdentifier: 'com.anonymous.photosharing',
+    infoPlist: {
+      NSCameraUsageDescription: 'This app needs access to your camera to take photos.',
+      NSPhotoLibraryUsageDescription: 'This app needs access to your photo library to select photos.',
+      NSPhotoLibraryAddUsageDescription: 'This app needs access to save photos to your photo library.'
+    }
+  },
+  android: {
+    adaptiveIcon: {
+      foregroundImage: './assets/adaptive-icon.png',
+      backgroundColor: '#ffffff'
+    },
+    package: 'com.anonymous.photosharing',
+    permissions: [
+      'CAMERA',
+      'READ_EXTERNAL_STORAGE',
+      'WRITE_EXTERNAL_STORAGE',
+      'READ_MEDIA_IMAGES'
+    ]
+  },
+  web: {
+    favicon: './assets/favicon.png'
+  },
+  plugins: ['expo-router'],
+  experiments: {
+    typedRoutes: true
+  }
+};
+
